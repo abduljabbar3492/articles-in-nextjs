@@ -15,7 +15,7 @@ frontend/out/
 
 # production
 frontend/build
-
+.DS_Store
 # misc
 frontend/.DS_Store
 frontend/*.pem

@@ -1,0 +1,15 @@
+export const CONSTANTS = {
+    REQUEST_CODES : {
+        SUCCESS: 200,
+        BAD_REQUEST: 400,
+        SERVER_ERROR: 500,
+        BAD_GATEWAY: 502,
+        SERVICE_UNAVAILABLE: 503,
+        GATEWAY_TIMEOUT: 504,
+        REQUEST_TIMEDOUT: 408,
+        NO_DATA_FOUND: 404,
+        UNAUTHORIZED: 401,
+        REQUEST_ENTITY_TO_LARGE: 413,
+        CONFLICT: 409
+    }
+}

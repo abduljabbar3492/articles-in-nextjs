@@ -11,7 +11,7 @@ const Navbar = () => {
         if (userService.userValue) {
             setIsLoggedIn(true);
         }
-    }, []);
+    }, [userService.userValue]);
     const logoutHandler = () => {
         userService.logout();
         setIsLoggedIn(false);

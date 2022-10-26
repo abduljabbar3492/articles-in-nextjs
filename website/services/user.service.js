@@ -13,15 +13,16 @@ export const userService = {
     createArticle,
     fetchSingleUserArticles,
     user: userSubject.asObservable(),
-    get userValue() { return userSubject.value }
+    get userValue() { return userSubject.value },
+    addArticle
 };
 
 function getAll() {
-    return http.get(`${baseUrl}/article/get_articles_count`);
+    return http.get(`http://localhost:3000/api/article/get_articles_count`);
 }
 
 async function register(data) {
-    const user = await http.post(`${baseUrl}/user/register`, data);
+    const user = await http.post(`${baseUrl}/user/signup`, data);
     if (user.status) {
         userSubject.next(user);
         localStorage.setItem('user', JSON.stringify(user));
@@ -51,4 +52,9 @@ async function createArticle(data) {
 
 async function fetchSingleUserArticles(userId) {
     return http.get(`${baseUrl}/article/fetch_single_user_articles?user_id=${userId}`);
+}
+
+// add articles new
+async function addArticle(data) {
+    return await http.post(`${baseUrl}/article/add_article`, data);
 }
